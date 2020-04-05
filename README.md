@@ -1,12 +1,11 @@
-# C CMake Template
-A template for C project using cmake. 
+# C++ CMake Template
+A template for C++ project using cmake. 
 
 ## Motivation
-Make bootstrapping a C project easier.
+Make bootstrapping a C++ project easier.
 
 ### Prerequisites
 * [cmake](https://cmake.org/)
-* [CMocka](https://cmocka.org/) - for unit testing
 
 ## Build
 ```
@@ -15,29 +14,11 @@ cmake .. && make -j
 ```
 
 ### Unit tests
-Unit tests are built on [CMocka](https://cmocka.org/).
+Unit tests are built on [Catch2](https://github.com/catchorg/Catch2).
 
 To run tests simply run:
 ```
 make test
-```
-
-### Fuzzing
-Fuzzing requires clang compiler:
-```
-export CXX=/usr/bin/clang++
-export CC=/usr/bin/clang
-```
-
-To build:
-```
-mkdir build && cd -
-cmake -DFUZZ_TEST=ON .. && make -j 
-```
-
-Then simply run:
-```
-./bin/fuzz_my_project
 ```
 
 ## Usage
