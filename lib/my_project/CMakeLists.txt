@@ -1,5 +1,5 @@
 add_library(${PROJECT_NAME} STATIC
-    src/my_project.c
+    src/my_project.cxx
   )
 
 target_include_directories(${PROJECT_NAME}

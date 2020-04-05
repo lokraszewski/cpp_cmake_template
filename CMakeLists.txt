@@ -1,15 +1,11 @@
-cmake_minimum_required(VERSION 3.11)
+cmake_minimum_required(VERSION 3.13)
 
 project(my_project
   VERSION 0.1.0
   )
-
+include(FetchContent)
 include(ExternalProject)
 include(CTest)
-
-find_package(CMocka CONFIG REQUIRED)
-
-option(FUZZ_TEST "Enable FUZZ testing" OFF)
 
 # Check out Git submodules.
 message(STATUS "Checking for submodules")
@@ -42,7 +38,3 @@ option(WITH_EXAMPLES OFF)
 option(UNIT_TESTING OFF)
 
 add_subdirectory(test)
-
-if(FUZZ_TEST)
-	add_subdirectory(fuzz)
-endif()
